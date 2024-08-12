@@ -34,6 +34,7 @@ const searchedLocation = (query) => updateWeather(...query.split("&"));
 const route = new Map([
   ["/current-location", currentLocation],
   ["/weather", searchedLocation],
+  ["/", () => window.location.hash = "#/current-location"], // Default route for home page
 ]);
 
 const checkHash = function () {
@@ -49,7 +50,7 @@ const checkHash = function () {
 window.addEventListener("hashchange", checkHash);
 
 window.addEventListener("load", function () {
-  if (window.location.hash) {
+  if (!window.location.hash) {
     window.location.hash = "#/current-location";
   } else {
     checkHash();
