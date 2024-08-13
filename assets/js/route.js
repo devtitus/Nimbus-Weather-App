@@ -8,7 +8,7 @@
 "use strict";
 
 import { updateWeather, error404 } from "./app.js";
-const defaultLocation = "#/weather?Lat=51.5073219&lon=0.1276474"; // Default location
+const defaultLocation = "#/current-location"; // Default location
 
 const currentLocation = function () {
   window.navigator.geolocation.getCurrentPosition(
@@ -30,7 +30,6 @@ const searchedLocation = (query) => updateWeather(...query.split("&"));
 const route = new Map([
   ["/current-location", currentLocation],
   ["/weather", searchedLocation],
-  ["/", () => window.location.hash = "#/current-location"], // Default route for home page
 ]);
 
 const checkHash = function () {
@@ -48,7 +47,7 @@ window.addEventListener("hashchange", checkHash);
 
 window.addEventListener("load", function () {
   if (!window.location.hash) {
-    window.location.hash = "#/current-location";
+    window.location.hash = defaultLocation;
   } else {
     checkHash();
   }
