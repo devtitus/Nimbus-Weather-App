@@ -555,9 +555,9 @@ article.container::before {
 }
 
 .current-weather-card .meta-list {
-  margin-block-start: 16px;
-  padding-block-start: 16px;
-  border-block-start: 1px solid var(--outline);
+  margin-block-end: 16px;
+  padding-block-end: 16px;
+  border-block-end: 1px solid var(--outline);
 }
 
 .current-weather-card .meta-item {
@@ -572,6 +572,17 @@ article.container::before {
 
 .current-weather-card .meta-text {
   color: var(--on-surface-variant);
+}
+
+.current-weather-card .location-text {
+  font-size: var(--title-1);
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.current-weather-card .location-icon {
+  color: var(--primary);
 }
 
 /*-----------------------------------*\

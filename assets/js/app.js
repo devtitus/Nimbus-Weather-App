@@ -142,6 +142,19 @@ export const updateWeather = function (lat, lon) {
         card.classList.add("card", "card-lg", "current-weather-card");
 
         card.innerHTML = `
+        <ul class="meta-list">
+        <li class="meta-item">
+                                <span class="m-icon location-icon">location_on</span>
+                                <p class="title-3 meta-text location-text" data-location></p>
+                            </li>
+                            <li class="meta-item">
+                                <span class="m-icon">calendar_today</span>
+                                <p class="title-3 meta-text">${module.getDate(
+            dateUnix,
+            timezone
+        )}</p>
+                            </li>
+                        </ul>
         <h2 class="title-2 card-title">Now</h2>
                         <div class="wrapper">
                             <p class="heading">${parseInt(
@@ -153,19 +166,7 @@ export const updateWeather = function (lat, lon) {
     
                         <p class="body-3">${description}</p>
     
-                        <ul class="meta-list">
-                            <li class="meta-item">
-                                <span class="m-icon">calendar_today</span>
-                                <p class="title-3 meta-text">${module.getDate(
-            dateUnix,
-            timezone
-        )}</p>
-                            </li>
-                            <li class="meta-item">
-                                <span class="m-icon">location_on</span>
-                                <p class="title-3 meta-text" data-location></p>
-                            </li>
-                        </ul>
+                        
     `;
 
         fetchdata(url.reverseGeo(lat, lon), function ([{ name, country }]) {
