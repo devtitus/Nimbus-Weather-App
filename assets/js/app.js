@@ -203,25 +203,16 @@ export const updateWeather = function (lat, lon) {
                     .toPrecision(3)}</p>
                                             <p class="label-1">PM<sub>2.5</sub></p>
                                         </li>
-                                    </ul>
-                                    <!--#2-->
-                                    <ul class="card-list">
                                         <li class="card-item">
                                             <p class="title-1">${so2
                     .toPrecision(3)}</p>
                                             <p class="label-1">SO<sub>2</sub></p>
                                         </li>
-                                    </ul>
-                                    <!--#3-->
-                                    <ul class="card-list">
                                         <li class="card-item">
                                             <p class="title-1">${no2
                     .toPrecision(3)}</p>
                                             <p class="label-1">NO<sub>2</sub></p>
                                         </li>
-                                    </ul>
-                                    <!--#4-->
-                                    <ul class="card-list">
                                         <li class="card-item">
                                             <p class="title-1">${o3
                     .toPrecision(3)}</p>
