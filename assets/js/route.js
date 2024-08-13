@@ -1,10 +1,3 @@
-/**
- * @license MIT
- * @fileoverview Manage all routes
- * @copyright Melwyn 2024 All rights reserved
- * @author Melwyn <m.works.gd@gmail.com>
- */
-
 "use strict";
 
 import { updateWeather, error404 } from "./app.js";

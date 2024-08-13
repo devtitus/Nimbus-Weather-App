@@ -6,7 +6,6 @@
  */
 
 'use strict';
-
 const api_key = "21c154714f7bb52a2180fe9a997b1c51";
 
 /**
@@ -24,10 +23,11 @@ export const fetchdata = function (URL, callback) {
         })
         .then(data => callback(data))
         .catch(error => {
-            console.error("Failed to fetch data:", error);
-            throw error;
+            console.error('Error fetching data:', error);
         });
 }
+
+
 
 export const url = {
     currentWeather(lat, lon) {
